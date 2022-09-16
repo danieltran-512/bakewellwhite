@@ -1,0 +1,15 @@
+.container{
+    height: 100vh;
+    background-image: linear-gradient(0deg, #79858C, #79858C), url(../public/1.png);
+    background-blend-mode: hue, normal;
+    background-size: cover;
+}
+
+.bottomText{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 3em;
+    background: linear-gradient(180deg, rgba(14, 18, 25, 0), rgba(14, 18, 25, 0.9));
+    width: 100%;
+}

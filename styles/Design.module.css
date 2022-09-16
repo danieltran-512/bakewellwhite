@@ -1,0 +1,45 @@
+.container{
+    position: relative;
+    height: 100vh;
+    background-color: #F7F7F7;
+    z-index: 500;
+    overflow: hidden;
+}
+
+.designLink{
+    cursor: pointer;
+    transition:0.5s
+}
+
+/*A dash line after designLink*/
+.designLink::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0px;
+    height: 1px;
+    background: #000;
+    transition: width 0.5s;
+    opacity: 0;
+}
+
+.designLink:hover{
+    /*translate X to 10px*/
+    transform: translateX(20px);
+}
+
+.designLink:hover::after{
+    /*width to 100px*/
+    width: 20px;
+    opacity: 1;
+    /*Translate x to the end of the line*/
+    transform: translateX(-20px);
+}
+
+/*Media query for mobile*/
+@media (max-width: 900px) {
+    .container{
+        height: fit-content;
+    }
+}
