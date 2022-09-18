@@ -9,7 +9,6 @@ export const SelectedWork = () => {
   //Current case study being selected
   const [selectedCase, setSelectedCase] = useState(3);
 
-
   //Set the displayed case study to the one selected by the user
   const setPhoto = (index: number) => {
     setSelectedCase(index);
@@ -21,12 +20,13 @@ export const SelectedWork = () => {
     {caseStudies.map((caseStudy: CaseStudy) => (
       <Box key={caseStudy.id} m='2em 0'>
         <Box display={'flex'} alignItems='flex-start' gap='4px' 
-        onClick={() => setSelectedCase(caseStudy.id)}
+        onClick={() => {
+          setSelectedCase(caseStudy.id)
+        }}
         sx={{cursor: 'pointer'}}
         >
           <Typography variant='subtitle1' display={'inline'}
           color={selectedCase === caseStudy.id ? '#FFF' : '#F7F7F7'}
-
           > 
             {caseStudy.id < 10 ? `[0${caseStudy.id}]` : `[${caseStudy.id}]`}
           </Typography>
@@ -44,7 +44,6 @@ export const SelectedWork = () => {
         pl='2.5em'>
           {caseStudy.description}
         </Typography>
-
 
         }
 
@@ -77,6 +76,7 @@ export const SelectedWork = () => {
             </button>
           </Box>
 
+        
           <ParallaxLayer offset={0.9} speed={0.45} style={{zIndex:"100"}}>
           <div id={styles.slider}>
               <input

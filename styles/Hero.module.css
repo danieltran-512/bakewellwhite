@@ -13,3 +13,10 @@
     background: linear-gradient(180deg, rgba(14, 18, 25, 0), rgba(14, 18, 25, 0.9));
     width: 100%;
 }
+
+@media screen and (max-width: 900px) {
+    .container{
+        background-position: center center;
+    }
+}
+    

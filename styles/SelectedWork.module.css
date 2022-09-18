@@ -102,3 +102,9 @@
       }
 }
   
+@media screen and (max-width: 900px) {
+    #slider{
+        bottom: 30%;
+        left: 45vw;
+    }
+}

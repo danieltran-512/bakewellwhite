@@ -23,15 +23,17 @@ export const Footer = () => {
         </Grid>
 
         <Grid item xs={4.5} textAlign='center'>
-          <Typography variant='h1' whiteSpace='nowrap' pb='14px'>
+          <Typography display={{xs:'none', sm:'block'}} variant='h1' whiteSpace='nowrap' pb='14px'>
           Get in touch
           </Typography>
           
+          <Box display={{xs:'none', sm:'block'}}>
           <button className='main-btn' style={{marginLeft:'50px'}}>
             <Typography variant='button'>
             Contact Us
             </Typography>
           </button>
+          </Box>
 
         </Grid>
 

@@ -90,7 +90,11 @@ footer{
 
 /*Media query for mobile*/
 @media (max-width: 900px) {
-  footer{
-      height: fit-content;
+  .main-btn{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0;
+    padding: 10px;
   }
+
 }

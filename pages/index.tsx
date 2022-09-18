@@ -33,9 +33,6 @@ const Home: NextPage = () => {
         <Design />
         <Footer />
         </Parallax>
-
-
-
       </div>
       </ThemeProvider>
     </animated.div>

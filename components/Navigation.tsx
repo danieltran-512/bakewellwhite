@@ -1,10 +1,13 @@
-import { Button } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
+import { Box } from '@mui/system'
 import Image from 'next/image'
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
 import Logo from '../public/logo.svg'
-
+import { MobileDrawer } from './MobileDrawer'
+import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Navigation.module.css'
+
 
 //Navigation bar component
 export const Navigation = () => {
@@ -16,9 +19,13 @@ export const Navigation = () => {
         delay: 2000,
     })
 
+    const [open, setOpen] = React.useState(false);
+    const toggleMobileMenu = () => setOpen(!open);
+
     return (
         <nav className={styles.nav}>
             <animated.div style={props}>
+            <Box display={{xs:'none', sm:'block'}}>
                 <ul className={styles.navItems}>
                     <li>
                         <Button variant='text'
@@ -59,7 +66,30 @@ export const Navigation = () => {
                         </Button>
                     </li>
                 </ul>
+            </Box>
+
+            <Box display={{xs:'flex', sm:'none'}}
+            justifyContent='space-between'
+            >
+            <Button variant='text'
+            sx = {{color: 'white', letterSpacing:'0.2em', textTransform: 'uppercase', textAlign:'center'}}
+            >
+                <Image
+                src={Logo}
+                alt='Bakewell-White Logo'
+                />
+            </Button>
+            <IconButton onClick={toggleMobileMenu}>
+                <MenuIcon sx={{color: 'white'}}/>
+            </IconButton>
+
+            <MobileDrawer
+            open = {open}
+            onClose = {toggleMobileMenu}
+            />
+            </Box>
             </animated.div>
+
         </nav>
   )
 }

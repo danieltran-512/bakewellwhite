@@ -64,10 +64,10 @@ export const AboutUs = () => {
 
   return (
     <>
-    <ParallaxLayer offset={0.5} speed={0.45} style={{zIndex:"100"}}>
+    <ParallaxLayer offset={0.5} speed={0.44} style={{zIndex:"100"}}>
     <Typography variant='h1' color={"#FFF"}
     position='absolute'
-    top="105vh"
+    top={{xl: '105vh', lg: "98vh", md: "95vh", sm: "95vh", xs: "105vh"}}
     left="3.5rem"
     zIndex={6}
     >
@@ -91,8 +91,8 @@ export const AboutUs = () => {
     <Box
     sx={{
       position:'absolute',
-      top: '150vh',
-      right: '9vw',
+      top: {md: '150vh', sm: '150vh', xs: '190vh', lg: '150vh', xl: '150vh'},
+      right: {md:'9vw', sm:'9vw', xs:'50vw', lg:'9vw', xl:'9vw'},
       zIndex: 90,
     }}
     >
@@ -116,7 +116,7 @@ export const AboutUs = () => {
         
         <Grid  item xs = {12} textAlign='center' mb="10px" 
         mt = {{xs: '10vh'}}
-        m = {{lg: '0 9vw', xl: '0 10vw'}}
+        m = {{sm: '7vh 2vw 0 2vw',lg: '0 9vw', xl: '0 10vw'}}
         display={'flex'}
         alignItems={'flex-end'}
         justifyContent={'center'}
