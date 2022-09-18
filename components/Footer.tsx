@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material'
 import { ParallaxLayer } from '@react-spring/parallax'
+import Link from 'next/link'
 import React from 'react'
 
 export const Footer = () => {
@@ -36,15 +37,21 @@ export const Footer = () => {
 
         <Grid item xs={4} textAlign='right' >
           <Typography variant='subtitle1' pb='14px'>
-          Privacy Policy
+            <Link href={'#'}>
+            Privacy Policy
+            </Link>
           </Typography>
-          
+
           <Typography variant='subtitle1' pb='14px'>
-          Facebook
+            <Link href={'#'}>
+            Facebook
+            </Link>
           </Typography>
 
           <Typography variant='subtitle1'>
-          Linkedin
+            <Link href={'#'}>
+            Linkedin
+            </Link>
           </Typography>
         </Grid>
       </Grid>

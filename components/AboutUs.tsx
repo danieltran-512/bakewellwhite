@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { ParallaxLayer } from '@react-spring/parallax'
 import Image from 'next/image'
@@ -13,20 +13,12 @@ export const AboutUs = () => {
   const {ref, inView} = useInView();
 
   //Animate components using framer-motion
-  const animation = useAnimation();
   const animation2 = useAnimation();
   const buttonAnimation = useAnimation();
 
   useEffect(() => {
     console.log("In view?", inView);
     if(inView){
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: 'spring', duration: 2, bounce: 0.3,
-        }
-      })
 
       animation2.start({
         y: 0,
@@ -43,16 +35,10 @@ export const AboutUs = () => {
         opacity: 1,
         transition: {
           type: 'spring', duration: 0.5, bounce: 0.3,
+          delay: 1
         }
       })
     } else {
-      animation.start({
-        y: "-10vh",
-        opacity:0,
-        transition: {
-          type: 'spring', duration: 2, bounce: 0.3
-        }
-      })
 
       animation2.start({
         y: "-10vh",
@@ -68,17 +54,17 @@ export const AboutUs = () => {
         x: '10vw',
         opacity: 0,
         transition: {
-          type: 'spring', duration: 0.5, bounce: 0.3,
+          type: 'spring', duration: 0.5, bounce: 0.3, 
+          delay: 1
         }
       })
     }
 
-    console.log(animation);
   }, [inView]);
 
   return (
     <>
-    <ParallaxLayer offset={0.5} speed={0.5} style={{zIndex:"100"}}>
+    <ParallaxLayer offset={0.5} speed={0.45} style={{zIndex:"100"}}>
     <Typography variant='h1' color={"#FFF"}
     position='absolute'
     top="105vh"
@@ -88,7 +74,7 @@ export const AboutUs = () => {
       We are an <br></br> award-wining
     </Typography>
     </ParallaxLayer>
-
+    
     <ParallaxLayer offset={0.5} speed={0.55} style={{zIndex:"100"}}>
     <Typography variant='h1' color={"#FFF"}
     position='absolute'
@@ -99,6 +85,7 @@ export const AboutUs = () => {
     >
       Boutique Design <br></br> Studio
     </Typography>
+
     </ParallaxLayer>
 
     <Box
@@ -117,7 +104,6 @@ export const AboutUs = () => {
     </Box>
 
     {/* About Us Text */}
-    <div ref={ref}>
     <Box
     overflow='scroll'
     sx={{zIndex:5, position:'absolute', 
@@ -126,38 +112,42 @@ export const AboutUs = () => {
     color:'white',
     background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))'}}
     > 
-      <Grid container spacing={2} mt="3.5rem" pb="2rem"> 
-      {/* <motion.div
-      animate={animation}> */}
-        <Grid  item xs = {12} textAlign='center' mb="10px" ml="4rem" mr="4rem">
+      <Grid container spacing={2} height='100%'> 
+        
+        <Grid  item xs = {12} textAlign='center' mb="10px" 
+        mt = {{xs: '10vh'}}
+        m = {{lg: '0 9vw', xl: '0 10vw'}}
+        display={'flex'}
+        alignItems={'flex-end'}
+        justifyContent={'center'}
+        >
             <Typography variant='subtitle2'>
             We can offer a complete design service to all vessels, power and sail. 
             Whether it is conceptual design work or full naval architecture and engineering, no job is too big or too small for our team.
             </Typography>
         </Grid>
-      {/* </motion.div> */}
 
         <Grid item xs = {6} pl="0">
-          {/* <motion.div
-          animate={animation2}> */}
-            <Typography variant='body1' textAlign='right' pl="8rem" >
+          <motion.div
+          animate={animation2}>
+            <Typography variant='body1' textAlign='right' pl={{ xs: '5vw',lg: '9vw', xl:'10vw'}} >
             We believe that success is to a large part a matter of design process, 
             and a good designer will have a design process that will produce a successful outcome whether it be a yacht, 
             a powerboat, an aeroplane, or a ballpoint pen.
             </Typography>
-        {/* </motion.div> */}
+        </motion.div>
 
         </Grid>
         <Grid item xs = {6} pr="0">
-          {/* <motion.div
-          animate={animation2}> */}
-            <Typography variant='body1' textAlign='left' pr="8rem" >
+          <motion.div
+          animate={animation2}>
+            <Typography variant='body1' textAlign='left' pr={{ xs: '5vw ',lg: '9vw', xl:'10vw'}} >
             We undertake a wide variety of craft from radio yachts, to racing yachts, offshore powerboats, 
             to 90m motoryachts, pilotboats, kayaks, Arabian dhows, cargo barges and fishing boats. 
             As a result we are exposed to a wide variety of conditions, design problems and novel solutions, 
             and if we were restricted to designing only one type of craft then we would not see this rich variety of thinking.
             </Typography>
-          {/* </motion.div> */}
+          </motion.div>
         </Grid>
       </Grid>
     </Box>
@@ -165,30 +155,23 @@ export const AboutUs = () => {
     {/* About background */}
     <Box
     sx={{zIndex:4, position:'absolute', top:'120vh', left:'20vw',
-    width:'60vw', height:'60vh'}}
+    width:'60vw', height:'60vh', backgroundImage:'url("/2.png")',
+    backgroundSize:'cover'
+    }}
     > 
-      <div style={{width: '100%', height: '100%', position: 'relative'}}>
-        <Image src="/2.png" 
-        alt="boat photo" 
-        layout='fill'
-        objectFit='cover' />
-      </div>
     </Box>
-
     {/* Mesh Background */}
-    <div className={styles.meshContainer}>
+    <div ref={ref} className={styles.meshContainer}>
       <Image
       src={Mesh}
       alt="mesh"
       />
-    </div>
     </div>
 
     {/* Background styling */}
     <div className={styles.rectangle}></div>
 
     <div className={styles.aboutContainer}></div>
-
     </>
   )
 }

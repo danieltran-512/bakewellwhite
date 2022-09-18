@@ -5,11 +5,12 @@ import Mesh2 from '../public/Mesh2.svg'
 import { Box } from '@mui/system'
 import Image from 'next/image'
 import { designs, DesignContent } from '../data/mockDesignData'
-
-import styles from '../styles/Design.module.css'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
+
+import styles from '../styles/Design.module.css'
+
 
 export const Design = () => {
   //Keep track of the current viewport
@@ -54,8 +55,14 @@ export const Design = () => {
 
   return (
     <div className={styles.container}>
-      <Grid container p='4em 3em 4em 3em' mb='4em' height='fit-content'>
-        <Grid item md={7}>
+      <Grid container p={{
+        lg: '4em 3em 4em 3em',
+        xl: '10em 3em 10em 3em',
+        md: '4em 3em 4em 3em',
+        sm: '3em',
+        xs: '3em'
+      }} height='100vh'>
+        <Grid item lg={7} md={6} sm={6}>
             <Typography variant='h1'>
             Award-Winning <br></br> Designs  
             </Typography>
@@ -65,7 +72,7 @@ export const Design = () => {
             sx = {{
               position: 'relative',
               left: '-5%',
-              bottom: '0',
+              bottom: {xl:'-10vh', md:'0'},
               zIndex: '20'
             }}
             >
@@ -78,7 +85,7 @@ export const Design = () => {
             </Box>
             </ParallaxLayer>
         </Grid>
-        <Grid item md={5}
+        <Grid item lg={5} md={6} sm={6}
         zIndex={200}
         style={{
           overflowY: "scroll",
@@ -108,9 +115,6 @@ export const Design = () => {
           </motion.div>
         </Grid>
       </Grid>
-
-      <ParallaxLayer offset={5} speed={1} style={{backgroundColor:'red'}}>
-      </ParallaxLayer>
     </div>
   )
 }

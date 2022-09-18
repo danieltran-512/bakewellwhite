@@ -1,14 +1,14 @@
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { ParallaxLayer } from '@react-spring/parallax'
 import { caseStudies, CaseStudy } from '../data/mockCaseStudyData'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/SelectedWork.module.css'
-import Image from 'next/image'
 
 export const SelectedWork = () => {
   //Current case study being selected
   const [selectedCase, setSelectedCase] = useState(3);
+
 
   //Set the displayed case study to the one selected by the user
   const setPhoto = (index: number) => {
@@ -38,11 +38,14 @@ export const SelectedWork = () => {
           </Typography>
         </Box>
         {selectedCase === caseStudy.id &&
+
         <Typography variant='body1'  
         width='34vw'         
         pl='2.5em'>
           {caseStudy.description}
         </Typography>
+
+
         }
 
       </Box>
@@ -56,11 +59,14 @@ export const SelectedWork = () => {
         </div>
         <div className={styles.container}>
           <Box display='flex'
-            flexDirection={'column'}>
-            <Typography variant='h1'>
+            flexDirection={'column'}
+            justifyContent='sppace-between'
+            height={'100vh'}
+            >
+            <Typography variant='h1' pt={{lg:'0', xl:'4rem'}}>
             Selected <br></br>Works
             </Typography>
-            <Box zIndex={'200'} mb='3em'>
+            <Box zIndex={'200'} m={{xl: '15vh 0', lg:'5vh 0'}}>
               {renderCaseStudies()}
             </Box>
 

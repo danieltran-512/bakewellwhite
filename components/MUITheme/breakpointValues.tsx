@@ -10,7 +10,7 @@ type BreakPoints = {
 export const  breakpointValues:BreakPoints = {
     xs: 0,
     sm: 900,
-    md: 1000,
-    lg: 1280,
+    md: 1280,
+    lg: 1440,
     xl: 1920,
 }
