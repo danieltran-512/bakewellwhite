@@ -3,6 +3,8 @@ import { Box } from '@mui/system'
 import { ParallaxLayer } from '@react-spring/parallax'
 import { caseStudies, CaseStudy } from '../data/mockCaseStudyData'
 import React, { useState } from 'react'
+import { PopIn } from './transitions/PopIn'
+import {motion} from 'framer-motion'
 import styles from '../styles/SelectedWork.module.css'
 
 export const SelectedWork = () => {
@@ -30,21 +32,31 @@ export const SelectedWork = () => {
           > 
             {caseStudy.id < 10 ? `[0${caseStudy.id}]` : `[${caseStudy.id}]`}
           </Typography>
+          <motion.div
+              whileHover={{
+                scale: selectedCase === caseStudy.id ? 1 : 2,
+                //Transform the effect to the right
+                x: selectedCase === caseStudy.id ? 0 : "10vw",
+                transition: { duration: 0.5 }
+              }}
+          >
           <Typography variant={selectedCase === caseStudy.id ? 'h2' : 'h3'} 
           display={'inline'}
           color={selectedCase === caseStudy.id ? '#FFF' : '#F7F7F7'}
           >
             {caseStudy.title}
           </Typography>
+          </motion.div>
         </Box>
+        
         {selectedCase === caseStudy.id &&
-
+        <PopIn>
         <Typography variant='body1'  
         width='34vw'         
         pl='2.5em'>
-          {caseStudy.description}
+          {caseStudies[selectedCase-1].description}
         </Typography>
-
+        </PopIn>
         }
 
       </Box>

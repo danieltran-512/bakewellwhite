@@ -91,8 +91,8 @@ export const AboutUs = () => {
     <Box
     sx={{
       position:'absolute',
-      top: {md: '150vh', sm: '150vh', xs: '190vh', lg: '150vh', xl: '150vh'},
-      right: {md:'9vw', sm:'9vw', xs:'50vw', lg:'9vw', xl:'9vw'},
+      top: {md: '150vh', sm: '190vh', xs: '190vh', lg: '150vh', xl: '150vh'},
+      right: {md:'3vw', sm:'50vw', xs:'50vw', lg:'9vw', xl:'9vw'},
       zIndex: 90,
     }}
     >
