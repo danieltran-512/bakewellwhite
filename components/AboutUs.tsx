@@ -6,7 +6,7 @@ import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Mesh from '../public/Mesh.svg'
 import {useAnimation, motion} from 'framer-motion'
-import styles from '../styles/AboutUS.module.css'
+import styles from '../styles/AboutUs.module.css'
 
 export const AboutUs = () => {
   //Keep track of whether the component is in view
