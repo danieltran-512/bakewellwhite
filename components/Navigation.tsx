@@ -8,7 +8,6 @@ import { MobileDrawer } from './MobileDrawer'
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Navigation.module.css'
 
-
 //Navigation bar component
 export const Navigation = () => {
     //Use react-spring to animate the nav bar

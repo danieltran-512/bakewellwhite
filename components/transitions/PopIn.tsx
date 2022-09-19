@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTransition, animated } from 'react-spring'
 
+//Pop in effect for components
 export const PopIn = ({children}:{children: any}) => {
     const transition = useTransition(children, {
         from: {

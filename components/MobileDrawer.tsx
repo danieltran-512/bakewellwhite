@@ -4,6 +4,7 @@ import { Box } from '@mui/system'
 import Link from 'next/link'
 import React from 'react'
 
+//Render a mobile drawer on mobile view
 export const MobileDrawer = ({open, onClose} : {open: boolean, onClose: any}) => {
   return (
     <Hidden smUp>
