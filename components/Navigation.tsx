@@ -3,7 +3,7 @@ import { Box } from '@mui/system'
 import Image from 'next/image'
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
-import Logo from '../public/logo.svg'
+import Logo from '../public/Logo.svg'
 import { MobileDrawer } from './MobileDrawer'
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Navigation.module.css'
