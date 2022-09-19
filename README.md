@@ -1,7 +1,8 @@
 ## About the project
 
 This project is built using NextJS in `TypeScript`. It uses `MaterialUI` with customised themes; `react-spring` and `framer-motion` as two primary animation libraries. The purpose of this project is to build a live website based on a given prototype with pixel perfect accuracy and experiment various React animation libraries to help with the transition. 
-This website is responsive on various screen sizes.
+<br>
+This website is responsive on various screen sizes. However, it is recommended to use on a web browser with large screen size to have a full experience with animations such as the parallax effect.
 
 ## Getting Started
 
