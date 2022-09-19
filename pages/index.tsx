@@ -20,9 +20,8 @@ const Home: NextPage = () => {
   return (
     <animated.div style={props}>
       <ThemeProvider theme={theme}>
-      <div>
         <Head>
-          <title>Bakewell-White</title>
+          <title>Bakewell White</title>
           <meta name="description" content="Bakewell-White Award Wining Boutique Design Studio" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -34,7 +33,6 @@ const Home: NextPage = () => {
         <Design />
         <Footer />
         </Parallax>
-      </div>
       </ThemeProvider>
     </animated.div>
   )

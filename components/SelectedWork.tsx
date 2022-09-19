@@ -20,7 +20,7 @@ export const SelectedWork = () => {
   const renderCaseStudies = () => {
     return <>
     {caseStudies.map((caseStudy: CaseStudy) => (
-      <Box key={caseStudy.id} m='2em 0'>
+      <Box key={caseStudy.id} m='3em 0'>
         <Box display={'flex'} alignItems='flex-start' gap='4px' 
         onClick={() => {
           setSelectedCase(caseStudy.id)
@@ -77,7 +77,7 @@ export const SelectedWork = () => {
             <Typography variant='h1' pt={{lg:'0', xl:'4rem'}}>
             Selected <br></br>Works
             </Typography>
-            <Box zIndex={'200'} m={{xl: '15vh 0', lg:'5vh 0'}}>
+            <Box zIndex={'200'} m={{xl: '5vh 0 18vh 0', lg:'3vh 0'}}>
               {renderCaseStudies()}
             </Box>
 
