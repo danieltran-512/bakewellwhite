@@ -59,7 +59,7 @@ export const Design = () => {
         lg: '4em 3em 4em 3em',
         xl: '10em 3em 10em 3em',
         md: '4em 3em 4em 3em',
-        sm: '3em',
+        sm: '4.5em 3em',
         xs: '3em'
       }} height='100vh'>
         <Grid item lg={7} md={6} sm={6}>

@@ -107,16 +107,15 @@ export const AboutUs = () => {
     <Box
     overflow='scroll'
     sx={{zIndex:5, position:'absolute', 
-    top:'120vh', left:'20vw',
-    width:'60vw', height:'60vh',
+    top:'120vh', left:{xs:'5vw',sm:'20vw'},
+    width:{xs:'90vw', sm: '60vw'}, height:'60vh',
     color:'white',
     background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))'}}
     > 
       <Grid container spacing={2} height='100%'> 
         
         <Grid  item xs = {12} textAlign='center' mb="10px" 
-        mt = {{xs: '10vh'}}
-        m = {{sm: '7vh 2vw 0 2vw',lg: '0 9vw', xl: '0 10vw'}}
+        m = {{xs:'5vh 10vw 0 10vw',sm: '7vh 2vw 0 2vw',lg: '0 9vw', xl: '0 10vw'}}
         display={'flex'}
         alignItems={'flex-end'}
         justifyContent={'center'}
@@ -154,8 +153,8 @@ export const AboutUs = () => {
 
     {/* About background */}
     <Box
-    sx={{zIndex:4, position:'absolute', top:'120vh', left:'20vw',
-    width:'60vw', height:'60vh', backgroundImage:'url("/2.png")',
+    sx={{zIndex:4, position:'absolute', top:'120vh', left:{xs:'5vw',sm:'20vw'},
+    width:{xs:'90vw', sm: '60vw'}, height:'60vh', backgroundImage:'url("/2.png")',
     backgroundSize:'cover'
     }}
     > 
