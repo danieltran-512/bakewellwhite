@@ -9,12 +9,13 @@ import theme from '../components/MUITheme/theme'
 import { ThemeProvider } from '@emotion/react'
 import { useSpring, animated } from 'react-spring'
 import { Parallax } from '@react-spring/parallax'
+
 const Home: NextPage = () => {
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     config: { duration: 1500 },
-})
+  })
 
   return (
     <animated.div style={props}>
