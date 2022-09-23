@@ -105,7 +105,7 @@ export const AboutUs = () => {
 
     {/* About Us Text */}
     <Box
-    overflow='scroll'
+    overflow={{lg: 'scroll', xs: 'hidden'}}
     sx={{zIndex:5, position:'absolute', 
     top:'120vh', left:{xs:'5vw',sm:'20vw'},
     width:{xs:'90vw', sm: '60vw'}, height:'60vh',

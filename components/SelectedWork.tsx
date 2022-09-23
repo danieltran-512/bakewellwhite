@@ -77,7 +77,7 @@ export const SelectedWork = () => {
             <Typography variant='h1' pt={{lg:'0', xl:'4rem'}}>
             Selected <br></br>Works
             </Typography>
-            <Box zIndex={'200'} m={{xl: '5vh 0 18vh 0', lg:'3vh 0'}}>
+            <Box zIndex={'200'} m={{xl: '5vh 0 15vh 0', lg:'3vh 0'}}>
               {renderCaseStudies()}
             </Box>
 

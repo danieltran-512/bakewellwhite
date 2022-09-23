@@ -34,7 +34,7 @@ export const Design = () => {
     }}
     >
         <Box display='flex' alignItems='flex-start' gap='10px'>
-        <Typography variant='subtitle1' display='inline' color={'black'}>
+        <Typography variant='subtitle1' display='inline' color={'#0E1219'}>
           {design.id < 10 ? `[0${design.id}]` : `[${design.id}]`}
         </Typography>
         <Link href={`/design/${design.id}`}>
@@ -44,7 +44,7 @@ export const Design = () => {
         </Link>
         </Box>
 
-        <Typography variant='body1' textAlign='right' color={'black'}>
+        <Typography variant='body1' textAlign='right' color={'#0E1219'}>
           {design.description}
         </Typography>
     </Box>
@@ -63,7 +63,7 @@ export const Design = () => {
         xs: '3em'
       }} height='100vh'>
         <Grid item lg={7} md={6} sm={6}>
-            <Typography variant='h1' color='black'>
+            <Typography variant='h1' color='#0E1219'>
             Award-Winning <br></br> Designs  
             </Typography>
             <ParallaxLayer offset={1.5} speed={0.5}>
